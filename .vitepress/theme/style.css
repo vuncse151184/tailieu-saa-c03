@@ -1,0 +1,367 @@
+/* =====================================================================
+   AWS SAA-C03 · Custom theme — Navy đậm + Vàng
+   Tông màu: deep navy (#0A1633) làm nền tối, vàng/amber (#FFC400) làm điểm nhấn
+   ===================================================================== */
+
+/* ---------- Font ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+/* =====================================================================
+   PALETTE
+   ===================================================================== */
+
+:root {
+  /* Vàng / Amber — màu thương hiệu */
+  --brand-yellow:      #FFC400;
+  --brand-yellow-soft: #FFD64D;
+  --brand-yellow-deep: #E0A800;
+  --brand-gold-text:   #9A6A00;   /* vàng đậm để đọc tốt trên nền sáng */
+
+  /* Navy đậm */
+  --navy-900: #060F26;
+  --navy-800: #0A1633;
+  --navy-700: #0E1D44;
+  --navy-600: #132456;
+  --navy-500: #1B2F6B;
+  --navy-400: #27407F;
+  --navy-line: #21356B;
+}
+
+/* ---------- Brand (link, accent) — LIGHT ---------- */
+:root {
+  --vp-c-brand-1: var(--brand-gold-text);
+  --vp-c-brand-2: var(--brand-yellow-deep);
+  --vp-c-brand-3: var(--brand-yellow);
+  --vp-c-brand-soft: rgba(255, 196, 0, 0.18);
+
+  /* Nút brand: nền vàng, chữ navy */
+  --vp-button-brand-bg: var(--brand-yellow);
+  --vp-button-brand-hover-bg: var(--brand-yellow-soft);
+  --vp-button-brand-active-bg: var(--brand-yellow-deep);
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-text: var(--navy-800);
+  --vp-button-brand-hover-text: var(--navy-900);
+  --vp-button-brand-active-text: var(--navy-900);
+}
+
+/* ---------- DARK theme = nền navy đậm ---------- */
+.dark {
+  --vp-c-brand-1: var(--brand-yellow-soft);
+  --vp-c-brand-2: var(--brand-yellow);
+  --vp-c-brand-3: var(--brand-yellow-deep);
+  --vp-c-brand-soft: rgba(255, 196, 0, 0.16);
+
+  --vp-c-bg: var(--navy-800);
+  --vp-c-bg-alt: var(--navy-900);
+  --vp-c-bg-soft: var(--navy-700);
+  --vp-c-bg-elv: var(--navy-700);
+
+  --vp-c-text-1: #EAF0FB;
+  --vp-c-text-2: #AEBCD8;
+  --vp-c-text-3: #7C8AAC;
+
+  --vp-c-divider: var(--navy-line);
+  --vp-c-border: var(--navy-line);
+  --vp-c-gutter: var(--navy-900);
+
+  --vp-c-default-soft: rgba(255, 255, 255, 0.05);
+
+  --vp-button-brand-text: var(--navy-900);
+  --vp-button-brand-hover-text: var(--navy-900);
+}
+
+/* =====================================================================
+   HERO (trang chủ)
+   ===================================================================== */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, var(--brand-yellow) 20%, var(--brand-yellow-soft) 80%);
+
+  --vp-home-hero-image-background-image: linear-gradient(160deg, var(--navy-600) 10%, var(--brand-yellow-deep) 100%);
+  --vp-home-hero-image-filter: blur(56px);
+}
+
+.VPHero .text {
+  background: linear-gradient(120deg, var(--navy-700), var(--navy-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dark .VPHero .text {
+  background: linear-gradient(120deg, #FFFFFF, #C9D6F0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* nền hero gradient nhẹ */
+.VPHome {
+  background:
+    radial-gradient(60% 50% at 80% 0%, rgba(255, 196, 0, 0.10), transparent 70%),
+    radial-gradient(50% 50% at 0% 10%, rgba(27, 47, 107, 0.10), transparent 70%);
+}
+.dark .VPHome {
+  background:
+    radial-gradient(60% 50% at 80% 0%, rgba(255, 196, 0, 0.12), transparent 70%),
+    radial-gradient(55% 55% at 0% 8%, rgba(39, 64, 127, 0.35), transparent 70%);
+}
+
+/* =====================================================================
+   FEATURE CARDS
+   ===================================================================== */
+
+.VPFeature {
+  border: 1px solid var(--vp-c-border);
+  border-radius: 16px;
+  transition: transform .25s cubic-bezier(.22,.61,.36,1), box-shadow .25s, border-color .25s;
+  background: var(--vp-c-bg-soft);
+}
+.VPFeature:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand-yellow);
+  box-shadow: 0 14px 32px rgba(6, 15, 38, 0.18);
+}
+.dark .VPFeature:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 196, 0, 0.25);
+}
+.VPFeature .icon {
+  background: var(--brand-yellow) !important;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(255, 196, 0, 0.35);
+}
+
+/* =====================================================================
+   NAVBAR
+   ===================================================================== */
+
+.VPNav {
+  backdrop-filter: saturate(180%) blur(14px);
+}
+.VPNavBar {
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+.VPNavBar.has-sidebar .content {
+  border-color: var(--vp-c-divider);
+}
+.dark .VPNavBar,
+.dark .VPNav {
+  background-color: rgba(10, 22, 51, 0.82);
+}
+.VPNavBarTitle .title {
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+/* gạch chân vàng dưới menu đang active */
+.VPNavBarMenuLink.active,
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* =====================================================================
+   SIDEBAR
+   ===================================================================== */
+
+.VPSidebar {
+  background: var(--vp-c-bg-alt) !important;
+}
+.VPSidebarItem.level-0 > .item > .text {
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+/* mục đang chọn: thanh vàng + nền nhẹ */
+.VPSidebarItem.is-active > .item .link .text,
+.VPSidebarItem.is-active > .item .text {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 600;
+}
+.VPSidebarItem.is-link > .item:hover .text {
+  color: var(--vp-c-brand-1);
+}
+.VPSidebarItem.is-active > .item {
+  position: relative;
+}
+.VPSidebarItem.is-active.is-link > .item::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 2px;
+  bottom: 2px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--brand-yellow);
+}
+
+/* =====================================================================
+   HEADINGS & CONTENT
+   ===================================================================== */
+
+.vp-doc h1 {
+  font-weight: 800;
+  letter-spacing: -.4px;
+  background: linear-gradient(120deg, var(--vp-c-text-1), var(--vp-c-text-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.vp-doc h2 {
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 26px;
+  position: relative;
+}
+.vp-doc h2::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 34px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--brand-yellow), var(--brand-yellow-deep));
+}
+.vp-doc h2 { padding-left: 0; }
+
+.vp-doc a {
+  font-weight: 500;
+  text-underline-offset: 3px;
+  transition: color .15s;
+}
+
+/* =====================================================================
+   CODE BLOCKS & INLINE CODE
+   ===================================================================== */
+
+.vp-doc :not(pre) > code {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  border-radius: 6px;
+  font-weight: 500;
+}
+.dark .vp-doc :not(pre) > code {
+  color: var(--brand-yellow-soft);
+}
+div[class*='language-'] {
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+}
+.dark div[class*='language-'] {
+  background-color: var(--navy-900);
+}
+div[class*='language-'] .lang {
+  color: var(--brand-yellow-deep);
+}
+
+/* =====================================================================
+   TABLES
+   ===================================================================== */
+
+.vp-doc table {
+  border-radius: 10px;
+  overflow: hidden;
+  display: table;
+  width: 100%;
+}
+.vp-doc tr { transition: background .15s; }
+.vp-doc th {
+  background: var(--navy-700);
+  color: #fff;
+  font-weight: 700;
+  border-color: var(--navy-500);
+}
+.dark .vp-doc th { background: var(--navy-600); }
+.vp-doc td { border-color: var(--vp-c-divider); }
+.vp-doc tr:nth-child(even) { background: var(--vp-c-bg-soft); }
+.vp-doc tbody tr:hover { background: var(--vp-c-brand-soft); }
+
+/* =====================================================================
+   CUSTOM BLOCKS (tip / warning / danger / info)
+   ===================================================================== */
+
+.vp-doc .custom-block {
+  border-radius: 12px;
+  border-width: 1px;
+  border-left-width: 4px;
+}
+.custom-block.tip { border-left-color: var(--brand-yellow); }
+.custom-block.tip .custom-block-title { color: var(--brand-yellow-deep); }
+
+/* =====================================================================
+   BUTTONS / BADGES
+   ===================================================================== */
+
+.VPButton.brand {
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(255, 196, 0, 0.30);
+  transition: transform .18s, box-shadow .18s;
+}
+.VPButton.brand:hover { transform: translateY(-2px); }
+.VPButton.alt {
+  border-color: var(--vp-c-brand-1);
+}
+
+/* =====================================================================
+   SCROLLBAR
+   ===================================================================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--navy-400) transparent;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb {
+  background: var(--navy-400);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--brand-yellow-deep); background-clip: content-box; }
+
+/* =====================================================================
+   HIỆU ỨNG CHUYỂN TRANG
+   ===================================================================== */
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.VPContent.page-enter .VPDoc,
+.VPContent.page-enter .VPHome {
+  animation: pageEnter .42s cubic-bezier(.22, .61, .36, 1);
+}
+
+/* fade-in nội dung doc lần đầu tải */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.vp-doc > div > * { animation: fadeUp .5s both; }
+.vp-doc > div > :nth-child(1) { animation-delay: .02s; }
+.vp-doc > div > :nth-child(2) { animation-delay: .05s; }
+.vp-doc > div > :nth-child(3) { animation-delay: .08s; }
+
+/* feature cards xuất hiện so le */
+.VPFeatures .item { animation: fadeUp .5s both; }
+.VPFeatures .item:nth-child(2) { animation-delay: .06s; }
+.VPFeatures .item:nth-child(3) { animation-delay: .12s; }
+.VPFeatures .item:nth-child(4) { animation-delay: .18s; }
+.VPFeatures .item:nth-child(5) { animation-delay: .24s; }
+.VPFeatures .item:nth-child(6) { animation-delay: .30s; }
+
+/* chuyển màu mượt khi đổi light/dark */
+.VPContent, .VPSidebar, .VPNavBar, .VPFeature, .vp-doc th, .vp-doc td {
+  transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+}
+
+/* tôn trọng người dùng tắt hiệu ứng */
+@media (prefers-reduced-motion: reduce) {
+  *, .VPContent.page-enter .VPDoc, .vp-doc > div > *, .VPFeatures .item {
+    animation: none !important;
+    transition: none !important;
+  }
+}

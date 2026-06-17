@@ -1,0 +1,13 @@
+{
+  "name": "aws-saa-c03-docs",
+  "version": "1.0.0",
+  "description": "AWS SAA-C03 Study Materials - Tài liệu ôn thi AWS Solutions Architect Associate",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
