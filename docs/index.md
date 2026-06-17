@@ -9,6 +9,7 @@ hero:
     - theme: brand
       text: 🎯 Luyện đề thi (Quiz)
       link: /quiz.html
+      target: _blank
     - theme: alt
       text: Bắt đầu học →
       link: /00-tong-quan-overview

@@ -65,7 +65,7 @@ export default defineConfig({
           { text: 'Exam 1 · 390 câu hỏi', link: '/exam-1' },
         ],
       },
-      { text: '🎯 Quiz', link: '/quiz.html' },
+      { text: '🎯 Quiz', link: '/quiz.html', target: '_blank' },
     ],
 
     sidebar: [
